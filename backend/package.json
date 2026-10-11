@@ -1,0 +1,8 @@
+{
+  "name": "movie-catalog-backend",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node src/index.js", "check": "node --check src/index.js" },
+  "dependencies": { "express": "^4.21.2", "pg": "^8.13.3" }
+}

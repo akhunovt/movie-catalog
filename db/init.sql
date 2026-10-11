@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS movies (
+  id SERIAL PRIMARY KEY,
+  imdb_id VARCHAR(20) UNIQUE NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  year VARCHAR(20),
+  poster TEXT,
+  is_favorite BOOLEAN NOT NULL DEFAULT FALSE,
+  is_watched BOOLEAN NOT NULL DEFAULT FALSE,
+  user_rating INTEGER CHECK (user_rating BETWEEN 1 AND 10),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS movies_created_at_idx ON movies (created_at DESC);
